@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#171d18">
     <meta name="description" content="在 Android 上管理 MSLX Daemon，或直接运行 Minecraft Java 服务端。">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="Rolithax Launcher">
+    <meta name="twitter:card" content="summary">
     <meta property="og:title" content="Rolithax Launcher · 移动版">
     <meta property="og:description" content="远程管理与手机开服，收在一条轻巧的操作路径里。">
     <meta property="og:image" content="assets/rolithax-logo.png">
@@ -27,6 +31,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="mobile.css">
+    <noscript><style>.boot-screen{display:none!important}</style></noscript>
   </head>
   <body class="mobile-site site-booting">
     <div class="boot-screen" data-loader aria-label="正在载入网站" aria-live="polite">
@@ -55,7 +60,7 @@
           <p class="release-caveat">安装包以当前公开 Release 为准</p>
         </div>
         <figure class="mobile-landscape">
-          <img src="assets/daemon-night.jpg" alt="夜色中的 Minecraft 世界，代表远程与本机服务器的运行场景">
+          <img src="assets/daemon-night.jpg" alt="夜色中的 Minecraft 世界，代表远程与本机服务器的运行场景" width="1920" height="1013" decoding="async" fetchpriority="high">
           <div class="landscape-fade"></div>
           <div class="landscape-caption"><span>SERVER SCENE / 01</span><b>REMOTE + ON DEVICE</b></div>
           <div class="landscape-chip"><i></i><span data-mobile-image-label>从一台 Daemon 开始</span></div>
@@ -106,7 +111,7 @@
         <ol class="path-list">
           <li class="path-item">
             <span class="path-mark">01</span>
-            <div><h3>连接或配对</h3><p>扫描 MSLX 配对二维码，或手动填写 Daemon 地址与 API Key。</p><span class="path-tag">HTTPS FIRST / ANDROID KEYSTORE</span></div>
+            <div><h3>连接或配对</h3><p>扫描 Rolithax 配对二维码，或手动填写 Daemon 地址与 API Key。</p><span class="path-tag">HTTPS FIRST / ANDROID KEYSTORE</span></div>
           </li>
           <li class="path-item">
             <span class="path-mark">02</span>
@@ -142,7 +147,7 @@
         <h2 id="mobile-cta-title">准备好把现场<br>装进口袋了吗？</h2>
         <p>公开版本页面提供当前 Release 的 APK 与附件校验信息。未发布的源码改动不会自动进入安装包。</p>
         <a class="mobile-primary-action" href="download.html"><span>查看版本并下载</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a>
-        <a class="source-link" href="https://github.com/WLudy1012/MSLX_APP-Android" target="_blank" rel="noreferrer">浏览 Android 源码 <svg class="inline-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg></a>
+        <a class="source-link" href="https://github.com/WLudy1012/RolithaxLauncher" target="_blank" rel="noreferrer">浏览 Android 源码 <svg class="inline-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg></a>
       </section>
     </main>
 
@@ -150,9 +155,9 @@
       <a class="mobile-brand" href="#top"><img src="assets/rolithax-logo.png" alt=""><span><b>ROLITHAX</b><small>SERVER CONTROL</small></span></a>
       <p>独立第三方项目，与 MSLTeam 无隶属或关联关系。</p>
       <nav aria-label="法律与支持">
-        <a href="https://github.com/WLudy1012/MSLX_APP-Android/blob/main/LICENSE" target="_blank" rel="noreferrer">AGPL-3.0</a>
-        <a href="https://github.com/WLudy1012/MSLX_APP-Android/blob/main/DISCLAIMER.txt" target="_blank" rel="noreferrer">免责声明</a>
-        <a href="https://github.com/WLudy1012/MSLX_APP-Android/issues" target="_blank" rel="noreferrer">问题反馈</a>
+        <a href="https://github.com/WLudy1012/RolithaxLauncher/blob/main/LICENSE" target="_blank" rel="noreferrer">AGPL-3.0</a>
+        <a href="https://github.com/WLudy1012/RolithaxLauncher/blob/main/DISCLAIMER.txt" target="_blank" rel="noreferrer">免责声明</a>
+        <a href="https://github.com/WLudy1012/RolithaxLauncher/issues" target="_blank" rel="noreferrer">问题反馈</a>
         <a href="index.html?desktop=1">桌面版</a>
       </nav>
       <span class="mobile-footer-note">ROLITHAX / WLudy1012 / 2026</span>

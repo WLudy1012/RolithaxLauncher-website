@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#171d18">
     <meta name="description" content="Rolithax Launcher 将多个 MSLX Daemon 与 Android 本机 Minecraft Java 服务端统一到一套管理流程。">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="Rolithax Launcher">
+    <meta name="twitter:card" content="summary">
     <meta property="og:title" content="Rolithax Launcher · 服务器控制随手而行">
     <meta property="og:description" content="管理远程 Daemon，也能直接从 Android 手机创建、运行和维护 Minecraft Java 服务端。">
     <meta property="og:image" content="assets/rolithax-logo.png">
@@ -32,6 +36,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <noscript><style>.boot-screen{display:none!important}</style></noscript>
   </head>
   <body class="desktop-site site-booting">
     <div class="boot-screen" data-loader aria-label="正在载入网站" aria-live="polite">
@@ -74,7 +79,7 @@
 
         <div class="hero-art" data-hero-art>
           <figure class="hero-landscape">
-            <img src="assets/daemon-night.jpg" alt="Minecraft 夜色中的服务器世界">
+            <img src="assets/daemon-night.jpg" alt="Minecraft 夜色中的服务器世界" width="1920" height="1013" decoding="async" fetchpriority="high">
             <canvas data-world-canvas aria-label="远程与本机服务节点的三维连接示意"></canvas>
             <div class="landscape-shade"></div>
             <div class="art-coordinate"><span>FIELD / 01</span><b>ILLUSTRATIVE SCENE</b></div>
@@ -101,7 +106,7 @@
         </div>
         <div class="world-layout section-shell">
           <div class="world-stage" data-world-stage>
-            <img src="assets/daemon-night.jpg" alt="" aria-hidden="true">
+            <img src="assets/daemon-night.jpg" alt="" aria-hidden="true" width="1920" height="1013" loading="lazy" decoding="async">
             <canvas data-story-canvas aria-hidden="true"></canvas>
             <div class="world-stage-vignette"></div>
             <div class="stage-label"><span>ROLITHAX / INSTANCE MAP</span><span data-stage-phase>01 — CONNECT</span></div>
@@ -152,8 +157,8 @@
             <button class="workflow-step" id="flow-tab-operate" type="button" role="tab" aria-selected="false" aria-controls="flow-panel" data-flow-step="operate"><span>03</span><b>维护</b><small>控制台 / 文件 / 配置</small></button>
           </div>
           <article class="workflow-panel" id="flow-panel" role="tabpanel" aria-labelledby="flow-tab-connect" data-flow-panel>
-            <div class="workflow-panel-copy"><h3 data-flow-title>扫一下配对码，<br>或者手动填写连接。</h3><span data-flow-kicker>PAIR / CONFIGURE</span><p data-flow-description>配对已有 Daemon，也可以设置地址与 API Key。连接优先使用 HTTPS；密钥由 Android Keystore 加密保存。</p><a class="text-action" href="https://github.com/WLudy1012/MSLX_APP-Android#使用" target="_blank" rel="noreferrer">查看操作说明 <svg class="inline-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg></a></div>
-            <div class="workflow-diagram" aria-hidden="true"><div class="diagram-device"><span>MSLX</span><i></i><b>PAIR</b></div><div class="diagram-link"><i></i><i></i><i></i></div><div class="diagram-host"><span>HTTPS</span><b>DAEMON</b><small>CONNECTED</small></div><span class="diagram-stamp">SECURE / BY DEFAULT</span></div>
+            <div class="workflow-panel-copy"><h3 data-flow-title>扫一下配对码，<br>或者手动填写连接。</h3><span data-flow-kicker>PAIR / CONFIGURE</span><p data-flow-description>配对已有 Daemon，也可以设置地址与 API Key。连接优先使用 HTTPS；密钥由 Android Keystore 加密保存。</p><a class="text-action" href="https://github.com/WLudy1012/RolithaxLauncher#使用" target="_blank" rel="noreferrer">查看操作说明 <svg class="inline-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg></a></div>
+            <div class="workflow-diagram" aria-hidden="true"><div class="diagram-device"><span>ROLITHAX</span><i></i><b>PAIR</b></div><div class="diagram-link"><i></i><i></i><i></i></div><div class="diagram-host"><span>HTTPS</span><b>DAEMON</b><small>CONNECTED</small></div><span class="diagram-stamp">SECURE / BY DEFAULT</span></div>
           </article>
         </div>
       </section>
@@ -163,7 +168,7 @@
           <div class="console-copy">
             <h2 id="console-title">不用离开现场，<br><em>把运维做完。</em></h2>
             <p>启动与停止服务、跟进实时日志、管理文件和服务端配置。需要部署内容时，从实例直接打开资源管理。</p>
-            <a class="text-action" href="https://github.com/WLudy1012/MSLX_APP-Android" target="_blank" rel="noreferrer">浏览源代码 <svg class="inline-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg></a>
+            <a class="text-action" href="https://github.com/WLudy1012/RolithaxLauncher" target="_blank" rel="noreferrer">浏览源代码 <svg class="inline-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11"/></svg></a>
           </div>
           <div class="console-display">
             <div class="console-top"><span><i></i><i></i><i></i></span><b>INSTANCE / CONSOLE</b><small>示意界面</small></div>
@@ -183,7 +188,7 @@
         <div class="cta-content"><h2 id="cta-title">下一台服务器，<br><em>可以就在你手上。</em></h2><p>下载当前公开版本，连接 MSLX Daemon，或从手机本机新建实例。</p></div>
         <div class="cta-actions">
           <a class="action action-primary magnetic" href="download.html"><span>前往下载页</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a>
-          <a class="action action-quiet" href="https://github.com/WLudy1012/MSLX_APP-Android" target="_blank" rel="noreferrer"><span>查看 GitHub</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a>
+          <a class="action action-quiet" href="https://github.com/WLudy1012/RolithaxLauncher" target="_blank" rel="noreferrer"><span>查看 GitHub</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></a>
         </div>
       </section>
     </main>
@@ -191,7 +196,7 @@
     <footer class="site-footer section-shell">
       <a class="brand" href="#top" aria-label="返回首页"><img src="assets/rolithax-logo.png" alt=""><span><b>ROLITHAX</b><small>SERVER CONTROL / ANDROID</small></span></a>
       <p>独立第三方项目，与 MSLTeam 无隶属或关联关系。</p>
-      <div class="footer-links"><a href="download.html">下载 APK</a><a href="mobile.html">移动版</a><a href="https://github.com/WLudy1012/MSLX_APP-Android/blob/main/LICENSE" target="_blank" rel="noreferrer">AGPL-3.0</a><a href="https://github.com/WLudy1012/MSLX_APP-Android/blob/main/DISCLAIMER.txt" target="_blank" rel="noreferrer">免责声明</a><a href="https://github.com/WLudy1012/MSLX_APP-Android/issues" target="_blank" rel="noreferrer">反馈问题</a></div>
+      <div class="footer-links"><a href="download.html">下载 APK</a><a href="mobile.html">移动版</a><a href="https://github.com/WLudy1012/RolithaxLauncher/blob/main/LICENSE" target="_blank" rel="noreferrer">AGPL-3.0</a><a href="https://github.com/WLudy1012/RolithaxLauncher/blob/main/DISCLAIMER.txt" target="_blank" rel="noreferrer">免责声明</a><a href="https://github.com/WLudy1012/RolithaxLauncher/issues" target="_blank" rel="noreferrer">反馈问题</a></div>
       <span class="footer-note">ROLITHAX / WLudy1012 / 2026</span>
     </footer>
 

@@ -32,18 +32,18 @@
     finishBoot();
   }, 2800);
 
-  const CNB_REPO = 'WLudy/MSLX_APP-Android';
+  const CNB_REPO = 'WLudy/RolithaxLauncher';
   const CNB_REPO_URL = `https://cnb.cool/${CNB_REPO}`;
   const CNB_API_BASE = 'https://api.cnb.cool';
   const CNB_RELEASE_API = `${CNB_API_BASE}/${CNB_REPO}/-/releases/latest`;
   const CNB_RELEASE_READER = `https://r.jina.ai/http://cnb.cool/${CNB_REPO}/-/releases/latest`;
   const CNB_RELEASES_PAGE = `${CNB_REPO_URL}/-/releases`;
   const CNB_DOWNLOAD_BASE = `${CNB_REPO_URL}/-/releases/download`;
-  const GITHUB_RELEASE_API = 'https://api.github.com/repos/WLudy1012/MSLX_APP-Android/releases/latest';
+  const GITHUB_RELEASE_API = 'https://api.github.com/repos/WLudy1012/RolithaxLauncher/releases/latest';
   const APK_NAMES = { full: 'app-release.apk', lite: 'app-release-lite.apk' };
   const CACHED_RELEASE = {
     tag: 'v1.7.7-Beta',
-    title: 'MSLX_APP-Android v1.7.7-Beta',
+    title: 'Rolithax Launcher v1.7.7-Beta',
     publishedAt: '2026-09-26T08:51:57Z',
     assets: [
       { name: APK_NAMES.full, url: `${CNB_DOWNLOAD_BASE}/v1.7.7-Beta/${APK_NAMES.full}`, size: 49231948, hash: 'cefb958f8968b068647d728024f4f28567793ab48b610995167100d9b648ce2d' },

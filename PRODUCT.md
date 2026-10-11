@@ -32,7 +32,7 @@ Visitors arrive from a public static website, learn how remote and local server 
 - Can create and run Minecraft Java servers on Android using Java 8, 17, 21, or 25; Shizuku can provide an isolated Java subprocess engine.
 - Supports QR pairing, HTTPS-first connections, resource discovery through Modrinth, dependency checks, live ANSI console output, and server file/configuration maintenance.
 - The website is served directly by GitHub Pages without a server-side runtime or build step.
-- The latest source uses application ID `com.wludy.rolithax.launcher`, version name `1.7.9`, and version code `41`; published APK contents and naming remain determined by the public release.
+- The latest source uses application ID `com.wludy.rolithax.launcher`, version name `1.7.12`, and version code `44`; published APK contents and naming remain determined by the public release.
 - Motion must respect reduced-motion preferences, and Three.js content must have a readable static fallback when WebGL is unavailable.
 
 ## Brand Commitments
@@ -41,7 +41,7 @@ Use the name Rolithax Launcher, retain the supplied Rolithax logo, describe the 
 
 ## Evidence on Hand
 
-- Android source and usage guide in the sibling `MSLX-Android` repository.
+- Android source and usage guide in the [RolithaxLauncher repository](https://github.com/WLudy1012/RolithaxLauncher).
 - Supplied visual assets: `assets/rolithax-logo.png` and `assets/daemon-night.jpg`.
 - Public APK Release metadata and direct-link resolution in `download.js`.
 
