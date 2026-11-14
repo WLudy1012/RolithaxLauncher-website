@@ -4,50 +4,43 @@
 
 ## Platform
 
-web
+Web
 
 ## Stack
 
-Static HTML, CSS, and JavaScript deployed from the repository root with GitHub Pages.
+Vue 3 single-file components, Vite multi-page output, and a Cloudflare Pages Function for the public CNB release feed. Static hosting can use the GitHub feed and the bundled CNB snapshot.
 
 ## Users
 
-The website serves two equally important groups: people who already manage MSLX Daemon servers and Android Minecraft players who want to create or run a Java server from a phone.
+Android Minecraft players who run Java servers on their phones, and operators who manage MSLX Daemon instances from Android or desktop clients.
 
 ## Product Purpose
 
-Rolithax Launcher is an Android client for managing remote MSLX Daemon instances and running Minecraft Java servers locally on Android. The site explains those uses and helps visitors choose and download a public APK release.
+Explain local hosting and remote management, help visitors find the stable release for Android, Windows, or Linux, and link to HarmonyOS NEXT build notes.
 
 ## Positioning
 
-The Android app brings remote Daemon management and local phone hosting into one server overview and workflow.
+Rolithax Launcher is an independent client for managing MSLX Daemon instances and running Minecraft Java servers locally on Android.
 
 ## Operating Context
 
-Visitors arrive from a public static website, learn how remote and local server workflows fit together, then open the APK download page. Downloads are resolved from public release metadata in the browser.
+Visitors can use either a phone or desktop browser. Legacy entry URLs remain valid. The download page reads public release metadata and keeps the version, attachment, and checksum together for each provider.
 
 ## Capabilities and Constraints
 
-- Connects to multiple MSLX Daemon instances and shows their connection and server status.
-- Can create and run Minecraft Java servers on Android using Java 8, 17, 21, or 25; Shizuku can provide an isolated Java subprocess engine.
-- Supports QR pairing, HTTPS-first connections, resource discovery through Modrinth, dependency checks, live ANSI console output, and server file/configuration maintenance.
-- The website is served directly by GitHub Pages without a server-side runtime or build step.
-- The latest source uses application ID `com.wludy.rolithax.launcher`, version name `1.7.12`, and version code `44`; published APK contents and naming remain determined by the public release.
-- Motion must respect reduced-motion preferences, and Three.js content must have a readable static fallback when WebGL is unavailable.
+- Android supports remote management and local Minecraft Java hosting.
+- Windows and Linux stable packages are for remote management.
+- HarmonyOS NEXT HAP and device verification are pending.
+- Development screenshots are labeled as such.
+- The site works without WebGL and follows reduced-motion preferences.
+- Download attachments depend on the public release and the selected provider.
 
 ## Brand Commitments
 
-Use the name Rolithax Launcher, retain the supplied Rolithax logo, describe the project as an independent third-party client, and retain its AGPL-3.0 and disclaimer links.
+Use the Rolithax Launcher name and supplied logo. Keep the AGPL-3.0 license and disclaimer links available in the footer.
 
 ## Evidence on Hand
 
 - Android source and usage guide in the [RolithaxLauncher repository](https://github.com/WLudy1012/RolithaxLauncher).
-- Supplied visual assets: `assets/rolithax-logo.png` and `assets/daemon-night.jpg`.
-- Public APK Release metadata and direct-link resolution in `download.js`.
-
-## Product Principles
-
-- Keep remote management and local hosting understandable as related workflows.
-- Use accurate, current release information for download decisions.
-- Distinguish public APK facts from changes that exist only in source.
-- Make the site usable without relying on 3D rendering or motion.
+- Project imagery and labeled development screenshots in `public/assets/`.
+- Download sources and version snapshots in `src/lib/`.
