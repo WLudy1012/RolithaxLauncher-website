@@ -21,24 +21,14 @@ npm run preview
 
 在 Cloudflare Pages 上，`/api/releases/cnb` 通过 Pages Function 读取 CNB 最新版本。该接口只访问预设的 CNB 地址。静态托管仍可使用 GitHub 实时数据和 CNB 发布快照。
 
-## GitHub Pages
-
-`main` 推送会构建并部署 `dist/`。在仓库的 **Settings → Pages → Build and deployment** 中选择 **GitHub Actions**。GitHub Pages 使用静态网站，CNB 接口由 Cloudflare Pages 提供。
-
 ## Cloudflare Pages
 
-在仓库根目录构建和运行 Wrangler，便于同时打包 `dist/` 与 `functions/`。
+正式站点 [rolithax.wludy.xyz](https://rolithax.wludy.xyz) 由 Cloudflare Pages 项目 `mslx-android-website` 部署。Cloudflare 监听本仓库的 `main` 分支，运行 `npm run build`，发布 `dist/`，并编译仓库根目录的 `functions/`。部署状态可在 GitHub 提交的 **Cloudflare Pages** 检查中查看。
+
+在仓库根目录运行 Wrangler 可以本地预览 Pages Functions。
 
 ```sh
 npm ci
 npm run build
 npx wrangler@4.158.0 pages dev dist --compatibility-date=2026-11-04
 ```
-
-正式站点使用 Cloudflare Pages 项目 `mslx-android-website`，域名为 [rolithax.wludy.xyz](https://rolithax.wludy.xyz)，生产分支为 `main`。发布前用 `npx wrangler@4.158.0 whoami` 核对账号。
-
-```sh
-npx wrangler@4.158.0 pages deploy dist --project-name mslx-android-website --branch main
-```
-
-如果项目通过 Cloudflare Git 集成发布，构建命令为 `npm run build`，输出目录为 `dist`。
