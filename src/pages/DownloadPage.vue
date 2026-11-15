@@ -4,7 +4,7 @@ import { APK, DESKTOP, DESKTOP_BUILDS, PROVIDERS, compareVersions, fetchRelease,
 
 const sources = Object.keys(PROVIDERS)
 const releases = reactive(releaseSnapshots())
-const statuses = reactive({ cnb: 'loading', github: 'loading' })
+const statuses = reactive({ cnb: 'snapshot', github: 'snapshot' })
 const selectedSource = ref(null)
 const source = computed(() => selectedSource.value || preferredSource(releases))
 const release = computed(() => releases[source.value])

@@ -1,9 +1,10 @@
-import { createApp } from 'vue'
+import { createApp, createSSRApp } from 'vue'
 import App from './App.vue'
 import './style.css'
 
 const root = document.querySelector('#app')
-createApp(App, { page: root.dataset.page }).mount(root)
+const create = root.children.length ? createSSRApp : createApp
+create(App, { page: root.dataset.page }).mount(root)
 
 if (location.hash) {
   try {

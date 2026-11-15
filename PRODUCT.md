@@ -8,7 +8,7 @@ Web
 
 ## Stack
 
-Vue 3 single-file components, Vite multi-page output, and a Cloudflare Pages Function for the public CNB release feed. Static hosting can use the GitHub feed and the bundled CNB snapshot.
+Vue 3 single-file components, Vite client and server builds, and a Cloudflare Pages Advanced Mode Worker. Every document request receives Vue SSR; the browser hydrates the same components. Build-time HTML provides a static fallback. The Worker also serves the public CNB release feed.
 
 ## Users
 
@@ -24,7 +24,7 @@ Rolithax Launcher is an independent client for managing MSLX Daemon instances an
 
 ## Operating Context
 
-Visitors can use either a phone or desktop browser. Legacy entry URLs remain valid. The download page reads public release metadata and keeps the version, attachment, and checksum together for each provider.
+Visitors can use either a phone or desktop browser. Legacy entry URLs redirect to canonical documents. Googlebot, Bingbot, browsers without JavaScript, and ordinary visitors receive the same content. The download page reads public release metadata and keeps the version, attachment, and checksum together for each provider.
 
 ## Capabilities and Constraints
 

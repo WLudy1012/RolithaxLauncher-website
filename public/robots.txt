@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rolithax.wludy.xyz/sitemap.xml
