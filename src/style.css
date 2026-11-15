@@ -1104,7 +1104,224 @@ button {
     font-size: 0.74rem;
   }
 }
+
+.reading-progress {
+  display: none;
+}
+.phone-frame {
+  display: grid;
+  width: 238px;
+  aspect-ratio: 1080 / 2400;
+}
+.phone-frame .phone-shot {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.phone-swap-enter-active,
+.phone-swap-leave-active {
+  transition:
+    opacity 300ms ease,
+    transform 400ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+.phone-swap-enter-from {
+  opacity: 0;
+  transform: translateX(16px) scale(0.97);
+}
+.phone-swap-leave-to {
+  opacity: 0;
+  transform: translateX(-12px) scale(0.98);
+}
+.copy-swap-enter-active,
+.copy-swap-leave-active {
+  transition:
+    opacity 150ms ease,
+    transform 180ms ease;
+}
+.copy-swap-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.copy-swap-leave-to {
+  opacity: 0;
+  transform: translateY(-5px);
+}
+.hero-grid {
+  animation: grid-arrive 1200ms ease-out both;
+}
+.hero-badge .signal-dot {
+  animation: signal-pulse 1800ms ease-out 2;
+}
+.brand img {
+  transition: transform 250ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+.brand:hover img {
+  transform: rotate(-7deg) scale(1.06);
+}
+.button svg,
+.text-link svg {
+  transition: transform 220ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+.button:active {
+  transform: translateY(0) scale(0.97);
+}
+.button:hover svg {
+  transform: translateY(2px);
+}
+.text-link:hover svg {
+  transform: translateX(4px);
+}
+.theme-toggle svg {
+  transition: transform 380ms ease;
+}
+.theme-toggle[aria-pressed='true'] svg {
+  transform: rotate(90deg);
+}
+.faq-list summary span {
+  transition: transform 220ms ease;
+}
+.platform-card {
+  transition:
+    transform 260ms cubic-bezier(0.2, 0.75, 0.25, 1),
+    box-shadow 260ms ease,
+    border-color 260ms ease;
+}
+.feature-icon {
+  transition:
+    transform 250ms ease,
+    background 250ms ease;
+}
+.mock-server {
+  transition: background 200ms ease;
+}
+.site-nav a {
+  position: relative;
+}
+.site-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+.site-nav a:hover::after,
+.site-nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+.menu-toggle span {
+  transition: transform 200ms ease;
+}
+.menu-toggle[aria-expanded='true'] span:first-child {
+  transform: translateY(3.25px) rotate(45deg);
+}
+.menu-toggle[aria-expanded='true'] span:last-child {
+  transform: translateY(-3.25px) rotate(-45deg);
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .product-window {
+    transform: perspective(1400px) rotateX(var(--tilt-x, 0deg))
+      rotateY(var(--tilt-y, 0deg));
+    transition: transform 260ms ease-out;
+  }
+  .platform-card:hover,
+  .platform-card:focus-within {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 16px 34px #173d2412;
+  }
+  .feature-item:hover .feature-icon {
+    transform: translateY(-4px) rotate(-5deg);
+  }
+  .mock-server:hover {
+    background: var(--soft);
+  }
+}
+@supports (animation-timeline: scroll()) {
+  .reading-progress {
+    display: block;
+    position: fixed;
+    z-index: 30;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+    pointer-events: none;
+    transform-origin: left;
+    animation: reading-progress 1s linear;
+    animation-timeline: scroll(root block);
+  }
+}
+@keyframes reading-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes grid-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes signal-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 28%, transparent);
+  }
+  80%,
+  100% {
+    box-shadow: 0 0 0 9px transparent;
+  }
+}
+@keyframes menu-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 700px) {
+  .phone-frame {
+    width: 215px;
+  }
+  .site-nav.is-open {
+    animation: menu-enter 220ms ease-out;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .reading-progress {
+    display: none;
+  }
+  .phone-swap-enter-from,
+  .phone-swap-leave-to,
+  .copy-swap-enter-from,
+  .copy-swap-leave-to {
+    opacity: 1;
+    transform: none;
+  }
+  .button:hover,
+  .button:active,
+  .brand:hover img,
+  .button:hover svg,
+  .text-link:hover svg {
+    transform: none;
+  }
   html {
     scroll-behavior: auto;
   }

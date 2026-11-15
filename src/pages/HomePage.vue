@@ -153,20 +153,24 @@ const selected = ref('instances')
           </button>
         </div>
         <div class="feature-detail">
-          <h3>
-            {{
-              selected === 'instances'
-                ? '每个服务器，都有自己的位置。'
-                : '选好核心，让世界开始运行。'
-            }}
-          </h3>
-          <p>
-            {{
-              selected === 'instances'
-                ? '本机与不同 Daemon 的实例集中展示，按来源筛选后再操作，不用反复记地址。'
-                : '按游戏版本与服务器核心选择 Java 运行时。安装包不捆绑 JRE，需要开服时再下载。'
-            }}
-          </p>
+          <Transition name="copy-swap" mode="out-in">
+            <div :key="selected">
+              <h3>
+                {{
+                  selected === 'instances'
+                    ? '每个服务器，都有自己的位置。'
+                    : '选好核心，让世界开始运行。'
+                }}
+              </h3>
+              <p>
+                {{
+                  selected === 'instances'
+                    ? '本机与不同 Daemon 的实例集中展示，按来源筛选后再操作，不用反复记地址。'
+                    : '按游戏版本与服务器核心选择 Java 运行时。安装包不捆绑 JRE，需要开服时再下载。'
+                }}
+              </p>
+            </div>
+          </Transition>
         </div>
         <a class="text-link" href="/download#android"
           >获取 Android 版 <IconMark name="arrow" :size="17"
@@ -174,23 +178,28 @@ const selected = ref('instances')
       </div>
       <figure class="phone-stage">
         <div class="phone-orbit" aria-hidden="true"></div>
-        <img
-          class="phone-shot"
-          :src="
-            assets +
-            (selected === 'instances'
-              ? 'android-instances.png'
-              : 'android-create.png')
-          "
-          :alt="
-            selected === 'instances'
-              ? 'Rolithax Android 开发版的多实例管理页面'
-              : 'Rolithax Android 开发版的新建服务器页面'
-          "
-          width="1080"
-          height="2400"
-          loading="lazy"
-        />
+        <div class="phone-frame">
+          <Transition name="phone-swap">
+            <img
+              :key="selected"
+              class="phone-shot"
+              :src="
+                assets +
+                (selected === 'instances'
+                  ? 'android-instances.png'
+                  : 'android-create.png')
+              "
+              :alt="
+                selected === 'instances'
+                  ? 'Rolithax Android 开发版的多实例管理页面'
+                  : 'Rolithax Android 开发版的新建服务器页面'
+              "
+              width="1080"
+              height="2400"
+              loading="lazy"
+            />
+          </Transition>
+        </div>
         <figcaption>Android 开发版实机界面</figcaption>
       </figure>
     </div>
