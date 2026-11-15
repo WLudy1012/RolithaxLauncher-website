@@ -4,3 +4,12 @@
 
 /bundle/*
   Cache-Control: public, max-age=31536000, immutable
+
+/
+  X-Rolithax-Render: prerender
+
+/download
+  X-Rolithax-Render: prerender
+
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex

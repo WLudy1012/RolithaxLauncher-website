@@ -11,22 +11,10 @@ const templates = Object.fromEntries(
     ]),
   ),
 )
-await build({
+const renderer = await build({
   configFile: false,
   publicDir: false,
-  plugins: [
-    vue(),
-    {
-      name: 'html-templates',
-      resolveId(id) {
-        if (id === 'virtual:templates') return '\0templates'
-      },
-      load(id) {
-        if (id === '\0templates')
-          return `export default ${JSON.stringify(templates)}`
-      },
-    },
-  ],
+  plugins: [vue()],
   define: {
     'process.env.NODE_ENV': '"production"',
     __VUE_OPTIONS_API__: 'true',
@@ -35,15 +23,21 @@ await build({
   },
   ssr: { target: 'webworker', noExternal: true },
   build: {
-    ssr: 'server/worker.js',
+    ssr: 'server/render.js',
     outDir: 'dist',
     emptyOutDir: false,
+    write: false,
     minify: true,
-    rolldownOptions: { output: { entryFileNames: '_worker.js' } },
   },
 })
-const { renderPage } = await import('../dist/_worker.js')
-await writeFile('dist/index.html', await renderPage('home'))
-await writeFile('dist/download.html', await renderPage('download'))
-await writeFile('dist/mobile.html', await renderPage('home'))
-console.log('Worker SSR bundle and rendered HTML fallbacks ready.')
+const entry = renderer.output.find((item) => item.type === 'chunk' && item.isEntry)
+const { renderPage } = await import(
+  `data:text/javascript;base64,${Buffer.from(entry.code).toString('base64')}`
+)
+for (const [name, page] of [['index', 'home'], ['download', 'download']]) {
+  const body = await renderPage(page)
+  const html = templates[name].replace('<!--app-html-->', () => body)
+  await writeFile(`dist/${name}.html`, html)
+  if (page === 'home') await writeFile('dist/mobile.html', html)
+}
+console.log('Static HTML ready. Only the release API uses Pages Functions.')

@@ -23,7 +23,7 @@ async function readRelease(response) {
   }
 }
 
-export async function onRequestGet({ request, waitUntil }) {
+async function getRelease({ request, waitUntil }) {
   const cache = globalThis.caches?.default
   const key = new Request(new URL('/api/releases/cnb', request.url))
   const cached = await cache?.match(key).catch(() => undefined)
@@ -61,4 +61,16 @@ export async function onRequestGet({ request, waitUntil }) {
       headers: { 'Cache-Control': 'no-store' },
     })
   }
+}
+
+export async function onRequest(context) {
+  const { method } = context.request
+  if (!['GET', 'HEAD'].includes(method)) {
+    return new Response('Method not allowed', {
+      status: 405,
+      headers: { Allow: 'GET, HEAD' },
+    })
+  }
+  const response = await getRelease(context)
+  return method === 'HEAD' ? new Response(null, response) : response
 }
