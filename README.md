@@ -28,6 +28,8 @@ Googlebot、Bingbot 和普通访客读取相同的静态 HTML；不检测 User-A
 
 测试检查完整静态 HTML、canonical、浏览器资源、Functions 路由范围、旧链接、预览 noindex、404 以及 API 的 GET / HEAD / 方法限制。搜索引擎是否收录仍由搜索服务决定。
 
+Google Search Console 的站点验证文件为 `public/google308c54d9be376f92.html`，发布后位于 `/google308c54d9be376f92.html`。该文件需要长期保留，后续改版、构建和清理时不要删除、改名或修改内容；Vite 会将其原样复制到发布目录。`_redirects` 中对应的 200 内部重写规则也需保留，确保原始 `.html` 地址直接返回验证内容，不被 Pages 跳转到无后缀地址。
+
 ## 下载数据
 
 静态 HTML 展示仓库内已核对的公开发布快照，明确标记为「发布快照」。页面加载后同步 GitHub 与 CNB 最新版本；请求失败保留可用下载链接。Java 运行时按需下载。更新静态正文需要重新构建发布。
